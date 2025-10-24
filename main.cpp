@@ -1,11 +1,27 @@
 #include <iostream>
+#include <thread>
 
 using namespace std;
 
 const int WIDTH = 20;
 const int HEIGHT = 20;
 
+const int TICKS_PER_SECOND = 16;
+
 typedef char Matrix [WIDTH][HEIGHT];
+
+struct vec2{
+	int x;
+	int y;
+};
+
+struct GameState{
+	bool isRunning = false;
+
+	/*
+		La culebra
+	*/
+};
 
 void initMatrix(Matrix &m, char a){
 	int i, j;
@@ -32,10 +48,25 @@ void showMatrix(Matrix m){
 	}
 }
 
+void tick(GameState &gameState){
+	
+}
+
 int main(){
+
+	GameState gameState;
+	gameState.isRunning;
+
 	Matrix table;
 	initMatrix(table, '0');
 	showMatrix(table);
-	cout << "Hola" << endl;
+
+	while(gameState.isRunning){
+
+		tick(gameState);
+
+		this_thread::sleep_for(chrono::milliseconds(1000/TICKS_PER_SECOND));
+	}
+
 	return 0;
 }
