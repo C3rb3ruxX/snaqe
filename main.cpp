@@ -1,3 +1,11 @@
+/**
+ * Naming conventions:
+ *		Constants:	Uppercase and underscores:										THIS_IS_A_CONSTANT;
+ *		Variables:	Lowercase and underscores:										this_is_a_variable;
+ *		Methods:		First lowercase and next words intials uppercased:		exampleMethod();
+ *		Objects:		First initals uppercased:										ExampleObject{};
+ */
+
 #include <iostream>
 #include <thread>
 
@@ -14,9 +22,9 @@ struct vec2{
 };
 
 struct GameState{
-	bool isRunning = false;
+	bool is_running = false;
 	//Default value 16tps
-	int ticksPerSecond = 16;
+	int ticks_per_second = 16;
 
 	/*
 		La culebra
@@ -55,17 +63,17 @@ void tick(GameState &game_state){
 int main(){
 
 	GameState game_state;
-	game_state.isRunning;
+	game_state.is_running= true;
 
 	Matrix table;
 	initMatrix(table, '0');
 	showMatrix(table);
 
-	while(game_state.isRunning){
+	while(game_state.is_running){
 
 		tick(game_state);
+		this_thread::sleep_for(chrono::milliseconds(1000/game_state.ticks_per_second));
 
-		this_thread::sleep_for(chrono::milliseconds(1000/game_state.ticksPerSecond));
 	}
 
 	return 0;
