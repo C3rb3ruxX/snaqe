@@ -6,8 +6,6 @@ using namespace std;
 const int WIDTH = 20;
 const int HEIGHT = 20;
 
-const int TICKS_PER_SECOND = 16;
-
 typedef char Matrix [WIDTH][HEIGHT];
 
 struct vec2{
@@ -17,6 +15,8 @@ struct vec2{
 
 struct GameState{
 	bool isRunning = false;
+	//Default value 16tps
+	int ticksPerSecond = 16;
 
 	/*
 		La culebra
@@ -48,24 +48,24 @@ void showMatrix(Matrix m){
 	}
 }
 
-void tick(GameState &gameState){
+void tick(GameState &game_state){
 	
 }
 
 int main(){
 
-	GameState gameState;
-	gameState.isRunning;
+	GameState game_state;
+	game_state.isRunning;
 
 	Matrix table;
 	initMatrix(table, '0');
 	showMatrix(table);
 
-	while(gameState.isRunning){
+	while(game_state.isRunning){
 
-		tick(gameState);
+		tick(game_state);
 
-		this_thread::sleep_for(chrono::milliseconds(1000/TICKS_PER_SECOND));
+		this_thread::sleep_for(chrono::milliseconds(1000/game_state.ticksPerSecond));
 	}
 
 	return 0;
