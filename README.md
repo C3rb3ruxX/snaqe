@@ -2,7 +2,7 @@
 Classic snake game
 
 ### How the game works
-The program stores a matrix of numbers where all information is stored.
+The program stores a matrix of numbers containing all the information.
 
 Number 0 represents an empty space.
 A diferent number can represent two things:
